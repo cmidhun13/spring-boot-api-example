@@ -7,6 +7,7 @@ plugins {
     id 'com.palantir.docker-run' version '0.25.0'
     id 'jp.classmethod.aws.cloudformation' version '0.41'
     id 'com.palantir.docker-compose' version '0.22.1'
+    id 'jacoco'
 }
 
 version = scmVersion.version
