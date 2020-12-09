@@ -8,6 +8,7 @@ plugins {
     id 'jp.classmethod.aws.cloudformation' version '0.41'
     id 'com.palantir.docker-compose' version '0.22.1'
     id 'jacoco'
+    id 'org.sonarqube' version '3.0'
 }
 
 version = scmVersion.version
@@ -68,3 +69,10 @@ cloudFormation {
     ])
     templateFile project.file("ecs.yml")
 }
+
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://localhost:9000'
+    }
+}
+tasks['sonarqube'].dependsOn test
