@@ -34,7 +34,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
  /*   classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE'*/
-    classpath 'org.owasp:dependency-check-gradle:6.0.3'','commons-io:commons-io:2.5'
+    classpath 'org.owasp:dependency-check-gradle:6.0.3','commons-io:commons-io:2.5'
 }
 
 test {
