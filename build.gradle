@@ -9,6 +9,7 @@ plugins {
     id 'com.palantir.docker-compose' version '0.22.1'
     id 'jacoco'
     id 'org.sonarqube' version '3.0'
+    id 'org.owasp.dependencycheck'
 }
 
 version = scmVersion.version
@@ -31,6 +32,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE'
+    classpath 'org.owasp:dependency-check-gradle:3.1.2'
 }
 
 test {
@@ -76,3 +80,24 @@ sonarqube {
     }
 }
 tasks['sonarqube'].dependsOn test
+
+// OWASP Dependency Check settings
+dependencyCheck {
+
+    // let's ignore errors to make builds in Jenkins more stable
+    failOnError = false
+
+    // OWASP Dependency Check plugin for Jenkins needs an XML report,
+    // but humans may also need an HTML one
+    format = 'ALL'
+
+    // set up a quality gate for vulnerabilities with high severity level:
+    //   let's consider that a vulnerability has a high severity level if its CVSS score is higher than 7
+    //   the build is going to fail if vulnerabilities with high severity level found
+    failBuildOnCVSS = 7
+
+    // specify a list of known issues which contain:
+    //   false-positives
+    //   confirmed vulnerabilities which are not fixed yet, but we have a ticket for that
+    suppressionFile = 'dependency-check-known-issues.xml'
+}
