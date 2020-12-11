@@ -79,8 +79,9 @@ sonarqube {
         property 'sonar.host.url', 'http://localhost:9000'
     }
 }
-tasks['sonarqube'].dependsOn test
 
+tasks['sonarqube'].dependsOn test
+/*hghkjl;k;lkj;lkl;**/
 
 /*
 // OWASP Dependency Check settings
