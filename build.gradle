@@ -81,6 +81,7 @@ sonarqube {
 }
 tasks['sonarqube'].dependsOn test
 
+
 /*
 // OWASP Dependency Check settings
 dependencyCheck {
