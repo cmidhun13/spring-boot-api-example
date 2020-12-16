@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: kubernetes-configmap-reload
+  name: spring-boot-api-example
 spec:
   type: LoadBalancer
   ports:
     - port: 8080
       name: http
   selector:
-    app: kubernetes-configmap-reload
+    app: spring-boot-api-example
