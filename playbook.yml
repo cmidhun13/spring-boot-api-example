@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/0.1.0-SNAPSHOT
 kind: Deployment
 meta:
   name: springboot-deployment
@@ -17,3 +17,16 @@ spec:
         image: cmidhun/spring-boot-api-example:0.1.0-SNAPSHOT
         ports:
           -	containerPort: 80
+___
+kind: Service
+apiVersion: 0.1.0-SNAPSHOT
+metadata:
+  name: springboot-service
+spec:
+  selector:
+    app: springboot
+  ports:
+  - protocol: TCP
+    port: 80
+    nodePort: 31000
+  type: NodePort
