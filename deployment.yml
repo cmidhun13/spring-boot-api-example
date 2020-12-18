@@ -1,19 +1,17 @@
-apiVersion: apps/0.1.0-SNAPSHOT
+apiVersion: apps/v1
 kind: Deployment
-meta:
-  name: springboot-deployment
+metadata:
+  name: spring-boot-api-example
 spec:
-  selector:
-    matchLables:
-      app: springboot
-  replicas: 2
+  replicas: 3
   template:
     metadata:
-      lables:
-        app: springboot
+      labels:
+        app: spring-boot-api-example
     spec:
       containers:
-        -	name: springboot
-        image: cmidhun/spring-boot-api-example:0.1.0-SNAPSHOT
-        ports:
-          -	containerPort: 80
+        - image: "{{ image_id }}"
+          name: spring-boot-api-example
+          ports:
+            - containerPort: 8080
+              name: http
