@@ -4,7 +4,7 @@ metadata:
   name: server-demo
   namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: web
@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 628640267234.dkr.ecr.ap-southeast-1.amazonaws.com/eks-demo:latest
+          image: cmidhun/spring-boot-api-example:0.1.0-SNAPSHOT
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
