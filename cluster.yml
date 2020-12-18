@@ -22,8 +22,8 @@ vpc:
 nodeGroups:
   - name: EKS-public-workers
     instanceType: t2.medium
-    desiredCapacity: 2
+    desiredCapacity: 1
   - name: EKS-private-workers
     instanceType: t2.medium
-    desiredCapacity: 1
+    desiredCapacity: 0
     privateNetworking: true
