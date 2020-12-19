@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot-api-example
+  name: server-demo
+  namespace: default
 spec:
-  replicas: 3
+  replicas: 2
   selector:
-    matchLables:
+    matchLabels:
       app: spring-boot-api-example
   template:
     metadata:
