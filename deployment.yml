@@ -4,6 +4,9 @@ metadata:
   name: spring-boot-api-example
 spec:
   replicas: 3
+  selector:
+    matchLables:
+      app: spring-boot-api-example
   template:
     metadata:
       labels:
