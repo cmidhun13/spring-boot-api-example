@@ -14,7 +14,7 @@ spec:
         app: spring-boot-api-example
     spec:
       containers:
-        - image: cmidhun/spring-boot-api-example:0.1.0-SNAPSHOT
+        - image: cmidhun/sprin-boot-api-example:0.1.0-SNAPSHOT
           name: spring-boot-api-example
           ports:
             - containerPort: 8080
