@@ -46,4 +46,4 @@ An example project to demonstrate:
 * get all rides - GET [/ride](http://localhost:8080/ride) to get a list of all the rides
 * get specific ride - GET [/ride/${id}](http://localhost:8080/ride/1) to get a specific ride
 * create ride - POST JSON to [/ride](http://localhost:8080/ride) to create a new ride 
-(see [article](https://tomgregory.com/building-a-spring-boot-application-in-jenkins/#2_Trying_out_our_Spring_Boot_application) for full details)
+(see [article](https://tomgregory.com/building-a-spring-boot-application-in-jenkins/#2_Trying_out_our_Spring_Boot_application) for full details)# spring-boot-api-example
