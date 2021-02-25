@@ -4,7 +4,7 @@ metadata:
   name: spring-boot-api-example
   namespace: default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: spring-boot-api-example
