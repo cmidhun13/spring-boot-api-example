@@ -16,6 +16,7 @@ spec:
       containers:
         - image: cmidhun/spring-boot-api-example:0.1.0-SNAPSHOT
           name: spring-boot-api-example
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
               name: http
